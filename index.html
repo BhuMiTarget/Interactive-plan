@@ -1,0 +1,546 @@
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>20 Day Interactive Plan</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #f9f9f9;
+            }
+            .container {
+                max-width: 1000px;
+                margin: 40px auto;
+                background: #fff;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                border-radius: 12px;
+            }
+            h2 {
+                text-align: center;
+                margin-bottom: 20px;
+                color: #333;
+            }
+            table {
+                width: 100%;
+            }
+            td {
+                padding: 12px;
+                text-align: center;
+                vertical-align: middle;
+                min-width: 60px;
+                font-size: 14px;
+            }
+            .clickable {
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                border: 1px solid #dee2e6;
+            }
+            .clicked {
+                background-color: #92d050 !important;
+                color: #000;
+                font-weight: bold;
+            }
+            .past-clicked {
+                background-color: #f08080 !important;
+                color: #000;
+                font-weight: bold;
+            }
+            .frozen {
+                background-color: #f1f1f1;
+                color: #999;
+                pointer-events: none;
+                user-select: none;
+            }
+            .center-text {
+                text-align: center !important;
+                font-weight: bold;
+                color: #000;
+            }
+            .btn-group {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 20px;
+            }
+            .date-bar {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+            .date-bar input[type="date"] {
+                padding: 6px 10px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+        
+  button.toggle-lock {
+    font-size: 20px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  button.toggle-lock:hover {
+    transform: scale(1.2);
+  }
+
+</style>
+</head>
+<body><div class="date-bar" style="display:flex;justify-content:center;align-items:center;gap:10px;margin:20px 0;"><label class="form-label fw-bold" for="datePicker">Select Date:</label><input id="datePicker" type="date"></div>
+<div style="text-align:right; margin:10px 0;">
+<button class="btn btn-outline-dark btn-sm" onclick="toggleSection('section-b')">➡️ B</button>
+</div>
+<div id="section-b">
+<h2 style="text-align:center;">B</h2>
+<div class="container">
+<h2>20 Day Interactive Plan</h2>
+
+<div class="table-responsive">
+<table class="table" id="planTable">
+<tbody><tr><td class="frozen" id="cell-0-0" style="border:none;"></td><td class="frozen" id="cell-0-1" style="border:none;"></td><td class="frozen" id="cell-0-2" style="border:none;"></td><td class="frozen" id="cell-0-3" style="border:none;"></td><td class="frozen" id="cell-0-4" style="border:none;"></td><td class="frozen" id="cell-0-5" style="border:none;"></td><td class="frozen" id="cell-0-6" style="border:none;"></td><td class="frozen" id="cell-0-7" style="border:none;"></td><td class="frozen" id="cell-0-8" style="border:none;"></td><td class="frozen" id="cell-0-9" style="border:none;"></td><td class="frozen" id="cell-0-10" style="border:none;"></td><td class="frozen" id="cell-0-11" style="border:none;"></td><td class="frozen" id="cell-0-12" style="border:none;"></td><td class="frozen" id="cell-0-13" style="border:none;"></td><td class="frozen" id="cell-0-14" style="border:none;"></td><td class="frozen" id="cell-0-15" style="border:none;"></td><td class="frozen" id="cell-0-16" style="border:none;"></td></tr><tr><td class="frozen center-text" colspan="1" style="border:1px solid #dee2e6">GHATNACHKRA</td></tr><tr><td class="frozen" id="cell-2-0" style="border:none;"></td><td class="frozen" id="cell-2-1" style="border:none;"></td><td class="frozen" id="cell-2-2" style="border:none;"></td><td class="frozen" id="cell-2-3" style="border:none;"></td><td class="frozen" id="cell-2-4" style="border:none;"></td><td class="frozen" id="cell-2-5" style="border:none;"></td><td class="frozen" id="cell-2-6" style="border:none;"></td><td class="frozen" id="cell-2-7" style="border:none;"></td><td class="frozen" id="cell-2-8" style="border:none;"></td><td class="frozen" id="cell-2-9" style="border:none;"></td><td class="frozen" id="cell-2-10" style="border:none;"></td><td class="frozen" id="cell-2-11" style="border:none;"></td><td class="frozen" id="cell-2-12" style="border:none;"></td><td class="frozen" id="cell-2-13" style="border:none;"></td><td class="frozen" id="cell-2-14" style="border:none;"></td><td class="frozen" id="cell-2-15" style="border:none;"></td><td class="frozen" id="cell-2-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-3-0" style="border:none;"></td><td class="frozen" id="cell-3-1" style="border:1px solid #dee2e6;">HISTORY</td><td class="clickable clicked" id="cell-3-2" onclick="toggleGreen(this)" style="border: 1px solid rgb(222, 226, 230); background-color: rgb(40, 167, 69);"></td><td class="clickable" id="cell-3-3" onclick="toggleGreen(this)" style="border: 1px solid rgb(222, 226, 230);"></td><td class="clickable" id="cell-3-4" onclick="toggleGreen(this)" style="border: 1px solid rgb(222, 226, 230);"></td><td class="clickable" id="cell-3-5" onclick="toggleGreen(this)" style="border: 1px solid rgb(222, 226, 230);"></td><td class="clickable" id="cell-3-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-3-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-3-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="frozen" id="cell-3-9" style="border:none;"></td><td class="frozen" id="cell-3-10" style="border:none;"></td><td class="frozen" id="cell-3-11" style="border:none;"></td><td class="frozen" id="cell-3-12" style="border:none;"></td><td class="frozen" id="cell-3-13" style="border:none;"></td><td class="frozen" id="cell-3-14" style="border:none;"></td><td class="frozen" id="cell-3-15" style="border:none;"></td><td class="frozen" id="cell-3-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-4-0" style="border:none;"></td><td class="frozen" id="cell-4-1" style="border:1px solid #dee2e6;">GEOGRAPHY</td><td class="clickable" id="cell-4-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-4-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-4-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-4-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-4-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-4-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-4-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="frozen" id="cell-4-9" style="border:none;"></td><td class="frozen" id="cell-4-10" style="border:none;"></td><td class="frozen" id="cell-4-11" style="border:none;"></td><td class="frozen" id="cell-4-12" style="border:none;"></td><td class="frozen" id="cell-4-13" style="border:none;"></td><td class="frozen" id="cell-4-14" style="border:none;"></td><td class="frozen" id="cell-4-15" style="border:none;"></td><td class="frozen" id="cell-4-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-5-0" style="border:none;"></td><td class="frozen" id="cell-5-1" style="border:1px solid #dee2e6;">SCIENCE</td><td class="clickable" id="cell-5-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-5-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-5-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-5-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-5-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-5-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-5-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="frozen" id="cell-5-9" style="border:none;"></td><td class="frozen" id="cell-5-10" style="border:none;"></td><td class="frozen" id="cell-5-11" style="border:none;"></td><td class="frozen" id="cell-5-12" style="border:none;"></td><td class="frozen" id="cell-5-13" style="border:none;"></td><td class="frozen" id="cell-5-14" style="border:none;"></td><td class="frozen" id="cell-5-15" style="border:none;"></td><td class="frozen" id="cell-5-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-6-0" style="border:none;"></td><td class="frozen" id="cell-6-1" style="border:1px solid #dee2e6;">POLITY</td><td class="clickable" id="cell-6-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-6-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-6-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-6-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-6-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-6-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-6-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="frozen" id="cell-6-9" style="border:none;"></td><td class="frozen" id="cell-6-10" style="border:none;"></td><td class="frozen" id="cell-6-11" style="border:none;"></td><td class="frozen" id="cell-6-12" style="border:none;"></td><td class="frozen" id="cell-6-13" style="border:none;"></td><td class="frozen" id="cell-6-14" style="border:none;"></td><td class="frozen" id="cell-6-15" style="border:none;"></td><td class="frozen" id="cell-6-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-7-0" style="border:none;"></td><td class="frozen" id="cell-7-1" style="border:1px solid #dee2e6;">ECONOMICS</td><td class="clickable" id="cell-7-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-7-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-7-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-7-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-7-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-7-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-7-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="frozen" id="cell-7-9" style="border:none;"></td><td class="frozen" id="cell-7-10" style="border:none;"></td><td class="frozen" id="cell-7-11" style="border:none;"></td><td class="frozen" id="cell-7-12" style="border:none;"></td><td class="frozen" id="cell-7-13" style="border:none;"></td><td class="frozen" id="cell-7-14" style="border:none;"></td><td class="frozen" id="cell-7-15" style="border:none;"></td><td class="frozen" id="cell-7-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-8-0" style="border:none;"></td><td class="frozen" id="cell-8-1" style="border:1px solid #dee2e6;">BIHAR SPECIAL</td><td class="clickable" id="cell-8-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-8-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-8-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-8-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-8-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-8-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-8-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="frozen" id="cell-8-9" style="border:none;"></td><td class="frozen" id="cell-8-10" style="border:none;"></td><td class="frozen" id="cell-8-11" style="border:none;"></td><td class="frozen" id="cell-8-12" style="border:none;"></td><td class="frozen" id="cell-8-13" style="border:none;"></td><td class="frozen" id="cell-8-14" style="border:none;"></td><td class="frozen" id="cell-8-15" style="border:none;"></td><td class="frozen" id="cell-8-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-9-0" style="border:none;"></td><td class="frozen" id="cell-9-1" style="border:none;"></td><td class="frozen" id="cell-9-2" style="border:none;"></td><td class="frozen" id="cell-9-3" style="border:none;"></td><td class="frozen" id="cell-9-4" style="border:none;"></td><td class="frozen" id="cell-9-5" style="border:none;"></td><td class="frozen" id="cell-9-6" style="border:none;"></td><td class="frozen" id="cell-9-7" style="border:none;"></td><td class="frozen" id="cell-9-8" style="border:none;"></td><td class="frozen" id="cell-9-9" style="border:none;"></td><td class="frozen" id="cell-9-10" style="border:none;"></td><td class="frozen" id="cell-9-11" style="border:none;"></td><td class="frozen" id="cell-9-12" style="border:none;"></td><td class="frozen" id="cell-9-13" style="border:none;"></td><td class="frozen" id="cell-9-14" style="border:none;"></td><td class="frozen" id="cell-9-15" style="border:none;"></td><td class="frozen" id="cell-9-16" style="border:none;"></td></tr><tr><td class="frozen center-text" colspan="1" style="border:1px solid #dee2e6">CURRENT AFFAIRS</td></tr><tr><td class="frozen" id="cell-11-0" style="border:none;"></td><td class="frozen" id="cell-11-1" style="border:none;"></td><td class="frozen" id="cell-11-2" style="border:1px solid #dee2e6;">AUG</td><td class="frozen" id="cell-11-3" style="border:1px solid #dee2e6;">SEP</td><td class="frozen" id="cell-11-4" style="border:1px solid #dee2e6;">OCT</td><td class="frozen" id="cell-11-5" style="border:1px solid #dee2e6;">NOV</td><td class="frozen" id="cell-11-6" style="border:1px solid #dee2e6;">DEC</td><td class="frozen" id="cell-11-7" style="border:1px solid #dee2e6;">JAN</td><td class="frozen" id="cell-11-8" style="border:1px solid #dee2e6;">FEB</td><td class="frozen" id="cell-11-9" style="border:1px solid #dee2e6;">MAR</td><td class="frozen" id="cell-11-10" style="border:1px solid #dee2e6;">APR</td><td class="frozen" id="cell-11-11" style="border:1px solid #dee2e6;">MAY</td><td class="frozen" id="cell-11-12" style="border:1px solid #dee2e6;">JUN</td><td class="frozen" id="cell-11-13" style="border:1px solid #dee2e6;">JUL</td><td class="frozen" id="cell-11-14" style="border:1px solid #dee2e6;">AUG</td><td class="frozen" id="cell-11-15" style="border:none;"></td><td class="frozen" id="cell-11-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-12-0" style="border:none;"></td><td class="frozen" id="cell-12-1" style="border:1px solid #dee2e6;">EDUTERIA + BM</td><td class="clickable" id="cell-12-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-9" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-10" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-11" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-12" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-13" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-14" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="frozen" id="cell-12-15" style="border:none;"></td><td class="frozen" id="cell-12-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-13-0" style="border:none;"></td><td class="frozen" id="cell-13-1" style="border:1px solid #dee2e6;">SPEEDY</td><td class="clickable" id="cell-13-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-9" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-10" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-11" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-12" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-13" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-14" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="frozen" id="cell-13-15" style="border:none;"></td><td class="frozen" id="cell-13-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-14-0" style="border:none;"></td><td class="frozen" id="cell-14-1" style="border:1px solid #dee2e6;">PRATIYOGITA DARPAN</td><td class="clickable" id="cell-14-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-9" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-10" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-11" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-12" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-13" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-14" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="frozen" id="cell-14-15" style="border:none;"></td><td class="frozen" id="cell-14-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-15-0" style="border:none;"></td><td class="frozen" id="cell-15-1" style="border:none;"></td><td class="frozen" id="cell-15-2" style="border:none;"></td><td class="frozen" id="cell-15-3" style="border:none;"></td><td class="frozen" id="cell-15-4" style="border:none;"></td><td class="frozen" id="cell-15-5" style="border:none;"></td><td class="frozen" id="cell-15-6" style="border:none;"></td><td class="frozen" id="cell-15-7" style="border:none;"></td><td class="frozen" id="cell-15-8" style="border:none;"></td><td class="frozen" id="cell-15-9" style="border:none;"></td><td class="frozen" id="cell-15-10" style="border:none;"></td><td class="frozen" id="cell-15-11" style="border:none;"></td><td class="frozen" id="cell-15-12" style="border:none;"></td><td class="frozen" id="cell-15-13" style="border:none;"></td><td class="frozen" id="cell-15-14" style="border:none;"></td><td class="frozen" id="cell-15-15" style="border:none;"></td><td class="frozen" id="cell-15-16" style="border:none;"></td></tr><tr><td class="frozen center-text" colspan="1" style="border:1px solid #dee2e6">TESTS</td></tr><tr><td class="frozen" id="cell-17-0" style="border:none;"></td><td class="frozen" id="cell-17-1" style="border:none;"></td><td class="frozen" id="cell-17-2" style="border:none;"></td><td class="frozen" id="cell-17-3" style="border:none;"></td><td class="frozen" id="cell-17-4" style="border:none;"></td><td class="frozen" id="cell-17-5" style="border:none;"></td><td class="frozen" id="cell-17-6" style="border:none;"></td><td class="frozen" id="cell-17-7" style="border:none;"></td><td class="frozen" id="cell-17-8" style="border:none;"></td><td class="frozen" id="cell-17-9" style="border:none;"></td><td class="frozen" id="cell-17-10" style="border:none;"></td><td class="frozen" id="cell-17-11" style="border:none;"></td><td class="frozen" id="cell-17-12" style="border:none;"></td><td class="frozen" id="cell-17-13" style="border:none;"></td><td class="frozen" id="cell-17-14" style="border:none;"></td><td class="frozen" id="cell-17-15" style="border:none;"></td><td class="frozen" id="cell-17-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-18-0" style="border:none;"></td><td class="frozen" id="cell-18-1" style="border:1px solid #dee2e6;">EDUTERIA + BM</td><td class="clickable" id="cell-18-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-9" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-10" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-11" onclick="toggleGreen(this)" style="border: 1px solid rgb(222, 226, 230);"></td><td class="clickable" id="cell-18-12" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-13" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-14" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-15" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-16" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td></tr><tr><td class="frozen" id="cell-19-0" style="border:none;"></td><td class="frozen" id="cell-19-1" style="border:1px solid #dee2e6;">PYQ</td><td class="clickable" id="cell-19-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-9" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-10" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-11" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-12" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-13" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-14" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-15" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-16" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td></tr><tr><td class="frozen" id="cell-20-0" style="border:none;"></td><td class="frozen" id="cell-20-1" style="border:1px solid #dee2e6;">KGS</td><td class="clickable" id="cell-20-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-9" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-10" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-11" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-12" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-13" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-14" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-15" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-16" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td></tr><tr><td class="frozen" id="cell-21-0" style="border:none;"></td><td class="frozen" id="cell-21-1" style="border:1px solid #dee2e6;">OTHERS</td><td class="clickable" id="cell-21-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-9" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-10" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-11" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-12" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-13" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-14" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-15" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-16" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td></tr><tr><td class="frozen" id="cell-22-0" style="border:none;"></td><td class="frozen" id="cell-22-1" style="border:none;"></td><td class="frozen" id="cell-22-2" style="border:none;"></td><td class="frozen" id="cell-22-3" style="border:none;"></td><td class="frozen" id="cell-22-4" style="border:none;"></td><td class="frozen" id="cell-22-5" style="border:none;"></td><td class="frozen" id="cell-22-6" style="border:none;"></td><td class="frozen" id="cell-22-7" style="border:none;"></td><td class="frozen" id="cell-22-8" style="border:none;"></td><td class="frozen" id="cell-22-9" style="border:none;"></td><td class="frozen" id="cell-22-10" style="border:none;"></td><td class="frozen" id="cell-22-11" style="border:none;"></td><td class="frozen" id="cell-22-12" style="border:none;"></td><td class="frozen" id="cell-22-13" style="border:none;"></td><td class="frozen" id="cell-22-14" style="border:none;"></td><td class="frozen" id="cell-22-15" style="border:none;"></td><td class="frozen" id="cell-22-16" style="border:none;"></td></tr>
+</tbody></table>
+</div>
+<div class="btn-group">
+<button class="btn btn-success" onclick="saveChanges()">Save</button>
+<button class="btn btn-primary" onclick="sharePage()">Share</button>
+
+
+</div>
+</div>
+
+</div>
+<hr style="margin: 40px 0;">
+<div style="text-align:right; margin:10px 0;">
+<button class="btn btn-outline-dark btn-sm" onclick="toggleSection('section-m')">➡️ M</button>
+</div>
+<div id="section-m">
+<h2 style="text-align:center;">M</h2>
+<div class="container">
+<h2>20 Day Interactive Plan</h2>
+
+<div class="table-responsive">
+<table class="table" id="planTable">
+<tbody><tr><td class="frozen" id="cell-0-0" style="border:none;"></td><td class="frozen" id="cell-0-1" style="border:none;"></td><td class="frozen" id="cell-0-2" style="border:none;"></td><td class="frozen" id="cell-0-3" style="border:none;"></td><td class="frozen" id="cell-0-4" style="border:none;"></td><td class="frozen" id="cell-0-5" style="border:none;"></td><td class="frozen" id="cell-0-6" style="border:none;"></td><td class="frozen" id="cell-0-7" style="border:none;"></td><td class="frozen" id="cell-0-8" style="border:none;"></td><td class="frozen" id="cell-0-9" style="border:none;"></td><td class="frozen" id="cell-0-10" style="border:none;"></td><td class="frozen" id="cell-0-11" style="border:none;"></td><td class="frozen" id="cell-0-12" style="border:none;"></td><td class="frozen" id="cell-0-13" style="border:none;"></td><td class="frozen" id="cell-0-14" style="border:none;"></td><td class="frozen" id="cell-0-15" style="border:none;"></td><td class="frozen" id="cell-0-16" style="border:none;"></td></tr><tr><td class="frozen center-text" colspan="1" style="border:1px solid #dee2e6">GHATNACHKRA</td></tr><tr><td class="frozen" id="cell-2-0" style="border:none;"></td><td class="frozen" id="cell-2-1" style="border:none;"></td><td class="frozen" id="cell-2-2" style="border:none;"></td><td class="frozen" id="cell-2-3" style="border:none;"></td><td class="frozen" id="cell-2-4" style="border:none;"></td><td class="frozen" id="cell-2-5" style="border:none;"></td><td class="frozen" id="cell-2-6" style="border:none;"></td><td class="frozen" id="cell-2-7" style="border:none;"></td><td class="frozen" id="cell-2-8" style="border:none;"></td><td class="frozen" id="cell-2-9" style="border:none;"></td><td class="frozen" id="cell-2-10" style="border:none;"></td><td class="frozen" id="cell-2-11" style="border:none;"></td><td class="frozen" id="cell-2-12" style="border:none;"></td><td class="frozen" id="cell-2-13" style="border:none;"></td><td class="frozen" id="cell-2-14" style="border:none;"></td><td class="frozen" id="cell-2-15" style="border:none;"></td><td class="frozen" id="cell-2-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-3-0" style="border:none;"></td><td class="frozen" id="cell-3-1" style="border:1px solid #dee2e6;">HISTORY</td><td class="clickable clicked" id="cell-3-2" onclick="toggleGreen(this)" style="border: 1px solid rgb(222, 226, 230); background-color: rgb(40, 167, 69);"></td><td class="clickable clicked" id="cell-3-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-3-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-3-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-3-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-3-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-3-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="frozen" id="cell-3-9" style="border:none;"></td><td class="frozen" id="cell-3-10" style="border:none;"></td><td class="frozen" id="cell-3-11" style="border:none;"></td><td class="frozen" id="cell-3-12" style="border:none;"></td><td class="frozen" id="cell-3-13" style="border:none;"></td><td class="frozen" id="cell-3-14" style="border:none;"></td><td class="frozen" id="cell-3-15" style="border:none;"></td><td class="frozen" id="cell-3-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-4-0" style="border:none;"></td><td class="frozen" id="cell-4-1" style="border:1px solid #dee2e6;">GEOGRAPHY</td><td class="clickable" id="cell-4-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-4-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-4-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-4-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-4-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-4-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-4-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="frozen" id="cell-4-9" style="border:none;"></td><td class="frozen" id="cell-4-10" style="border:none;"></td><td class="frozen" id="cell-4-11" style="border:none;"></td><td class="frozen" id="cell-4-12" style="border:none;"></td><td class="frozen" id="cell-4-13" style="border:none;"></td><td class="frozen" id="cell-4-14" style="border:none;"></td><td class="frozen" id="cell-4-15" style="border:none;"></td><td class="frozen" id="cell-4-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-5-0" style="border:none;"></td><td class="frozen" id="cell-5-1" style="border:1px solid #dee2e6;">SCIENCE</td><td class="clickable" id="cell-5-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-5-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-5-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-5-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-5-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-5-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-5-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="frozen" id="cell-5-9" style="border:none;"></td><td class="frozen" id="cell-5-10" style="border:none;"></td><td class="frozen" id="cell-5-11" style="border:none;"></td><td class="frozen" id="cell-5-12" style="border:none;"></td><td class="frozen" id="cell-5-13" style="border:none;"></td><td class="frozen" id="cell-5-14" style="border:none;"></td><td class="frozen" id="cell-5-15" style="border:none;"></td><td class="frozen" id="cell-5-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-6-0" style="border:none;"></td><td class="frozen" id="cell-6-1" style="border:1px solid #dee2e6;">POLITY</td><td class="clickable" id="cell-6-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-6-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-6-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-6-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-6-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-6-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-6-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="frozen" id="cell-6-9" style="border:none;"></td><td class="frozen" id="cell-6-10" style="border:none;"></td><td class="frozen" id="cell-6-11" style="border:none;"></td><td class="frozen" id="cell-6-12" style="border:none;"></td><td class="frozen" id="cell-6-13" style="border:none;"></td><td class="frozen" id="cell-6-14" style="border:none;"></td><td class="frozen" id="cell-6-15" style="border:none;"></td><td class="frozen" id="cell-6-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-7-0" style="border:none;"></td><td class="frozen" id="cell-7-1" style="border:1px solid #dee2e6;">ECONOMICS</td><td class="clickable" id="cell-7-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-7-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-7-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-7-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-7-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-7-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-7-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="frozen" id="cell-7-9" style="border:none;"></td><td class="frozen" id="cell-7-10" style="border:none;"></td><td class="frozen" id="cell-7-11" style="border:none;"></td><td class="frozen" id="cell-7-12" style="border:none;"></td><td class="frozen" id="cell-7-13" style="border:none;"></td><td class="frozen" id="cell-7-14" style="border:none;"></td><td class="frozen" id="cell-7-15" style="border:none;"></td><td class="frozen" id="cell-7-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-8-0" style="border:none;"></td><td class="frozen" id="cell-8-1" style="border:1px solid #dee2e6;">BIHAR SPECIAL</td><td class="clickable" id="cell-8-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-8-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-8-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-8-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-8-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-8-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-8-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="frozen" id="cell-8-9" style="border:none;"></td><td class="frozen" id="cell-8-10" style="border:none;"></td><td class="frozen" id="cell-8-11" style="border:none;"></td><td class="frozen" id="cell-8-12" style="border:none;"></td><td class="frozen" id="cell-8-13" style="border:none;"></td><td class="frozen" id="cell-8-14" style="border:none;"></td><td class="frozen" id="cell-8-15" style="border:none;"></td><td class="frozen" id="cell-8-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-9-0" style="border:none;"></td><td class="frozen" id="cell-9-1" style="border:none;"></td><td class="frozen" id="cell-9-2" style="border:none;"></td><td class="frozen" id="cell-9-3" style="border:none;"></td><td class="frozen" id="cell-9-4" style="border:none;"></td><td class="frozen" id="cell-9-5" style="border:none;"></td><td class="frozen" id="cell-9-6" style="border:none;"></td><td class="frozen" id="cell-9-7" style="border:none;"></td><td class="frozen" id="cell-9-8" style="border:none;"></td><td class="frozen" id="cell-9-9" style="border:none;"></td><td class="frozen" id="cell-9-10" style="border:none;"></td><td class="frozen" id="cell-9-11" style="border:none;"></td><td class="frozen" id="cell-9-12" style="border:none;"></td><td class="frozen" id="cell-9-13" style="border:none;"></td><td class="frozen" id="cell-9-14" style="border:none;"></td><td class="frozen" id="cell-9-15" style="border:none;"></td><td class="frozen" id="cell-9-16" style="border:none;"></td></tr><tr><td class="frozen center-text" colspan="1" style="border:1px solid #dee2e6">CURRENT AFFAIRS</td></tr><tr><td class="frozen" id="cell-11-0" style="border:none;"></td><td class="frozen" id="cell-11-1" style="border:none;"></td><td class="frozen" id="cell-11-2" style="border:1px solid #dee2e6;">AUG</td><td class="frozen" id="cell-11-3" style="border:1px solid #dee2e6;">SEP</td><td class="frozen" id="cell-11-4" style="border:1px solid #dee2e6;">OCT</td><td class="frozen" id="cell-11-5" style="border:1px solid #dee2e6;">NOV</td><td class="frozen" id="cell-11-6" style="border:1px solid #dee2e6;">DEC</td><td class="frozen" id="cell-11-7" style="border:1px solid #dee2e6;">JAN</td><td class="frozen" id="cell-11-8" style="border:1px solid #dee2e6;">FEB</td><td class="frozen" id="cell-11-9" style="border:1px solid #dee2e6;">MAR</td><td class="frozen" id="cell-11-10" style="border:1px solid #dee2e6;">APR</td><td class="frozen" id="cell-11-11" style="border:1px solid #dee2e6;">MAY</td><td class="frozen" id="cell-11-12" style="border:1px solid #dee2e6;">JUN</td><td class="frozen" id="cell-11-13" style="border:1px solid #dee2e6;">JUL</td><td class="frozen" id="cell-11-14" style="border:1px solid #dee2e6;">AUG</td><td class="frozen" id="cell-11-15" style="border:none;"></td><td class="frozen" id="cell-11-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-12-0" style="border:none;"></td><td class="frozen" id="cell-12-1" style="border:1px solid #dee2e6;">EDUTERIA + BM</td><td class="clickable" id="cell-12-2" onclick="toggleGreen(this)" style="border: 1px solid rgb(222, 226, 230);"></td><td class="clickable" id="cell-12-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-9" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-10" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-11" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-12" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-13" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-12-14" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="frozen" id="cell-12-15" style="border:none;"></td><td class="frozen" id="cell-12-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-13-0" style="border:none;"></td><td class="frozen" id="cell-13-1" style="border:1px solid #dee2e6;">SPEEDY</td><td class="clickable" id="cell-13-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-9" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-10" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-11" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-12" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-13" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-13-14" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="frozen" id="cell-13-15" style="border:none;"></td><td class="frozen" id="cell-13-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-14-0" style="border:none;"></td><td class="frozen" id="cell-14-1" style="border:1px solid #dee2e6;">PRATIYOGITA DARPAN</td><td class="clickable" id="cell-14-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-9" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-10" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-11" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-12" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-13" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-14-14" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="frozen" id="cell-14-15" style="border:none;"></td><td class="frozen" id="cell-14-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-15-0" style="border:none;"></td><td class="frozen" id="cell-15-1" style="border:none;"></td><td class="frozen" id="cell-15-2" style="border:none;"></td><td class="frozen" id="cell-15-3" style="border:none;"></td><td class="frozen" id="cell-15-4" style="border:none;"></td><td class="frozen" id="cell-15-5" style="border:none;"></td><td class="frozen" id="cell-15-6" style="border:none;"></td><td class="frozen" id="cell-15-7" style="border:none;"></td><td class="frozen" id="cell-15-8" style="border:none;"></td><td class="frozen" id="cell-15-9" style="border:none;"></td><td class="frozen" id="cell-15-10" style="border:none;"></td><td class="frozen" id="cell-15-11" style="border:none;"></td><td class="frozen" id="cell-15-12" style="border:none;"></td><td class="frozen" id="cell-15-13" style="border:none;"></td><td class="frozen" id="cell-15-14" style="border:none;"></td><td class="frozen" id="cell-15-15" style="border:none;"></td><td class="frozen" id="cell-15-16" style="border:none;"></td></tr><tr><td class="frozen center-text" colspan="1" style="border:1px solid #dee2e6">TESTS</td></tr><tr><td class="frozen" id="cell-17-0" style="border:none;"></td><td class="frozen" id="cell-17-1" style="border:none;"></td><td class="frozen" id="cell-17-2" style="border:none;"></td><td class="frozen" id="cell-17-3" style="border:none;"></td><td class="frozen" id="cell-17-4" style="border:none;"></td><td class="frozen" id="cell-17-5" style="border:none;"></td><td class="frozen" id="cell-17-6" style="border:none;"></td><td class="frozen" id="cell-17-7" style="border:none;"></td><td class="frozen" id="cell-17-8" style="border:none;"></td><td class="frozen" id="cell-17-9" style="border:none;"></td><td class="frozen" id="cell-17-10" style="border:none;"></td><td class="frozen" id="cell-17-11" style="border:none;"></td><td class="frozen" id="cell-17-12" style="border:none;"></td><td class="frozen" id="cell-17-13" style="border:none;"></td><td class="frozen" id="cell-17-14" style="border:none;"></td><td class="frozen" id="cell-17-15" style="border:none;"></td><td class="frozen" id="cell-17-16" style="border:none;"></td></tr><tr><td class="frozen" id="cell-18-0" style="border:none;"></td><td class="frozen" id="cell-18-1" style="border:1px solid #dee2e6;">EDUTERIA + BM</td><td class="clickable" id="cell-18-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-9" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-10" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-11" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-12" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-13" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-14" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-15" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-18-16" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td></tr><tr><td class="frozen" id="cell-19-0" style="border:none;"></td><td class="frozen" id="cell-19-1" style="border:1px solid #dee2e6;">PYQ</td><td class="clickable" id="cell-19-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-9" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-10" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-11" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-12" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-13" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-14" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-15" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-19-16" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td></tr><tr><td class="frozen" id="cell-20-0" style="border:none;"></td><td class="frozen" id="cell-20-1" style="border:1px solid #dee2e6;">KGS</td><td class="clickable" id="cell-20-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-9" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-10" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-11" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-12" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-13" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-14" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-15" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-20-16" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td></tr><tr><td class="frozen" id="cell-21-0" style="border:none;"></td><td class="frozen" id="cell-21-1" style="border:1px solid #dee2e6;">OTHERS</td><td class="clickable" id="cell-21-2" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-3" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-4" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-5" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-6" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-7" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-8" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-9" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-10" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-11" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-12" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-13" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-14" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-15" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td><td class="clickable" id="cell-21-16" onclick="toggleGreen(this)" style="border:1px solid #dee2e6;"></td></tr><tr><td class="frozen" id="cell-22-0" style="border:none;"></td><td class="frozen" id="cell-22-1" style="border:none;"></td><td class="frozen" id="cell-22-2" style="border:none;"></td><td class="frozen" id="cell-22-3" style="border:none;"></td><td class="frozen" id="cell-22-4" style="border:none;"></td><td class="frozen" id="cell-22-5" style="border:none;"></td><td class="frozen" id="cell-22-6" style="border:none;"></td><td class="frozen" id="cell-22-7" style="border:none;"></td><td class="frozen" id="cell-22-8" style="border:none;"></td><td class="frozen" id="cell-22-9" style="border:none;"></td><td class="frozen" id="cell-22-10" style="border:none;"></td><td class="frozen" id="cell-22-11" style="border:none;"></td><td class="frozen" id="cell-22-12" style="border:none;"></td><td class="frozen" id="cell-22-13" style="border:none;"></td><td class="frozen" id="cell-22-14" style="border:none;"></td><td class="frozen" id="cell-22-15" style="border:none;"></td><td class="frozen" id="cell-22-16" style="border:none;"></td></tr>
+</tbody></table>
+</div>
+<div class="btn-group">
+<button class="btn btn-success" onclick="saveChanges()">Save</button>
+<button class="btn btn-primary" onclick="sharePage()">Share</button>
+
+
+</div>
+</div>
+
+</div>
+<script>
+const SECTIONS = ['section-b','section-m'];
+
+function getDate(){
+  return document.getElementById('datePicker').value || new Date().toISOString().split('T')[0];
+}
+
+function getStateKey(section,date){
+  return `planData_${section}_${date}`;
+}
+
+function getCells(section){
+  return Array.from(document.querySelector(`#${section}`).querySelectorAll('td.clickable'));
+}
+
+function saveSection(section){
+  const cells=getCells(section);
+  const state=cells.map(c=>c.classList.contains('clicked'));
+  const date=getDate();
+  localStorage.setItem(getStateKey(section,date),JSON.stringify(state));
+}
+
+function saveAll(){
+  SECTIONS.forEach(saveSection);
+  alert('Changes saved for selected date.');
+}
+
+function applySection(section){
+  const cells=getCells(section);
+  const date=getDate();
+  let state=localStorage.getItem(getStateKey(section,date));
+  if(!state){
+     // fallback to most recent previous date
+     let back=new Date(date);
+     while(back>=new Date('2000-01-01')){
+        back.setDate(back.getDate()-1);
+        const keyPrev=getStateKey(section, back.toISOString().split('T')[0]);
+        const s=localStorage.getItem(keyPrev);
+        if(s){ state=s; break;}
+     }
+  }
+  cells.forEach(c=>{c.classList.remove('clicked','past-clicked');});
+  if(state){
+     state=JSON.parse(state);
+     const todayStr=new Date().toISOString().split('T')[0];
+     cells.forEach((c,i)=>{
+        if(state[i]){
+           if(date < todayStr){
+             c.classList.add('past-clicked');
+           }else{
+             c.classList.add('clicked');
+           }
+        }
+     });
+  }
+}
+
+function applyAll(){
+   SECTIONS.forEach(applySection);
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+   const today=new Date().toISOString().split('T')[0];
+   document.getElementById('datePicker').value = today;
+   // attach listeners
+   SECTIONS.forEach(section=>{
+      getCells(section).forEach(cell=>{
+         cell.addEventListener('click',()=>{
+            cell.classList.toggle('clicked');
+            saveSection(section);
+         });
+      });
+   });
+   document.getElementById('datePicker').addEventListener('change',applyAll);
+   applyAll();
+});
+
+// keep buttons compatibility
+function saveChanges(){ saveAll(); }
+
+
+  async function sharePage() {
+    try {
+      const html = document.documentElement.outerHTML;
+      const blob = new Blob([html], { type: 'text/html' });
+      const file = new File([blob], 'interactive_plan.html', { type: 'text/html' });
+
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({
+          files: [file],
+          title: 'Interactive Plan',
+          text: 'Sharing interactive plan with current state',
+        });
+      } else {
+        alert("Sharing is not supported on this device.");
+      }
+    } catch (err) {
+      alert("Error during share: " + err.message);
+    }
+  }
+function lockChanges(){ SECTIONS.forEach(section=>{getCells(section).forEach(c=>c.classList.add('locked'));}); }
+function unlockChanges(){ SECTIONS.forEach(section=>{getCells(section).forEach(c=>c.classList.remove('locked'));}); }
+
+function toggleSection(id){
+  const el=document.getElementById(id);
+  if(el){ el.style.display = (el.style.display==='none') ? 'block':'none';}
+}
+
+  
+  
+  
+  
+  function toggleLock(sectionId) {
+    const date = document.getElementById("datePicker").value || new Date().toISOString().split("T")[0];
+    const section = document.getElementById(sectionId);
+    const cells = section.querySelectorAll(".clickable");
+    const button = document.getElementById("toggle-lock-" + sectionId.slice(-1));
+    const isLocked = cells.length && cells[0].classList.contains("locked");
+
+    if (isLocked) {
+      cells.forEach(cell => {
+        cell.classList.remove("locked");
+        cell.style.pointerEvents = "";
+        cell.style.opacity = "";
+        if (cell.classList.contains("clicked")) {
+          cell.style.backgroundColor = "#28a745";
+        } else {
+          cell.style.backgroundColor = "";
+        }
+      });
+      localStorage.removeItem(`lockState_${sectionId}_${date}`);
+      if (button) button.innerText = `🔓 ${sectionId.slice(-1).toUpperCase()}`;
+    } else {
+      alert(`${sectionId.slice(-1).toUpperCase()} section is now locked. Changes will be disabled.`);
+      cells.forEach(cell => {
+        cell.classList.add("locked");
+        cell.style.pointerEvents = "none";
+        if (cell.classList.contains("clicked")) {
+          cell.style.backgroundColor = "#007BFF";  // blue
+          cell.style.opacity = "1";
+        } else {
+          cell.style.backgroundColor = "";
+          cell.style.opacity = "0.5";
+        }
+      });
+      const lockState = Array.from(cells).map(cell => cell.classList.contains("locked"));
+      localStorage.setItem(`lockState_${sectionId}_${date}`, JSON.stringify(lockState));
+      if (button) button.innerText = `🔒 ${sectionId.slice(-1).toUpperCase()}`;
+    }
+  }
+
+
+function restoreLockStates(date) {
+    ["section-b", "section-m"].forEach(sectionId => {
+      const section = document.getElementById(sectionId);
+      const cells = section.querySelectorAll(".clickable");
+      const button = document.getElementById("toggle-lock-" + sectionId.slice(-1));
+      const lockState = JSON.parse(localStorage.getItem(`lockState_${sectionId}_${date}`) || "[]");
+
+      cells.forEach((cell, i) => {
+        const isLocked = lockState[i] === true;
+        if (isLocked) {
+          cell.classList.add("locked");
+          cell.style.pointerEvents = "none";
+          if (cell.classList.contains("clicked")) {
+            cell.style.backgroundColor = "#007BFF";  // blue when clicked + locked
+            cell.style.opacity = "1";
+          } else {
+            cell.style.backgroundColor = "";
+            cell.style.opacity = "0.5";
+          }
+        } else {
+          cell.classList.remove("locked");
+          cell.style.pointerEvents = "";
+          cell.style.opacity = "";
+          if (cell.classList.contains("clicked")) {
+            cell.style.backgroundColor = "#28a745";  // restore green
+          } else {
+            cell.style.backgroundColor = "";
+          }
+        }
+      });
+
+      if (button) {
+        button.innerText = lockState.includes(true) ? `🔒 ${sectionId.slice(-1).toUpperCase()}` : `🔓 ${sectionId.slice(-1).toUpperCase()}`;
+      }
+    });
+  }
+
+function restoreLockStates(date) {
+    ["section-b", "section-m"].forEach(sectionId => {
+      const section = document.getElementById(sectionId);
+      const cells = section.querySelectorAll(".clickable");
+      const button = document.getElementById("toggle-lock-" + sectionId.slice(-1));
+      const state = JSON.parse(localStorage.getItem(`lockState_${sectionId}_${date}`) || "[]");
+
+      cells.forEach((cell, i) => {
+        if (state[i]) {
+          cell.classList.add("locked");
+          cell.style.pointerEvents = "none";
+          if (cell.classList.contains("clicked")) {
+            cell.style.backgroundColor = "#007BFF"; // blue if locked + clicked
+            cell.style.opacity = "1";
+          } else {
+            cell.style.opacity = "0.5";
+          }
+        } else {
+          cell.classList.remove("locked");
+          cell.style.pointerEvents = "";
+          cell.style.opacity = "";
+          if (cell.classList.contains("clicked")) {
+            cell.style.backgroundColor = "#28a745"; // restore green
+          } else {
+            cell.style.backgroundColor = "";
+          }
+        }
+      });
+
+      if (button) {
+        button.innerText = state.includes(true) ? `🔒 ${sectionId.slice(-1).toUpperCase()}` : `🔓 ${sectionId.slice(-1).toUpperCase()}`;
+      }
+    });
+  }
+
+function restoreLockStates(date) {
+    ["section-b", "section-m"].forEach(sectionId => {
+      const section = document.getElementById(sectionId);
+      const cells = section.querySelectorAll(".clickable");
+      const button = document.getElementById("toggle-lock-" + sectionId.slice(-1));
+      const state = JSON.parse(localStorage.getItem(`lockState_${sectionId}_${date}`) || "[]");
+
+      cells.forEach((cell, i) => {
+        if (state[i]) {
+          cell.classList.add("locked");
+          cell.style.pointerEvents = "none";
+          cell.style.opacity = cell.classList.contains("clicked") ? "0.3" : "0.5";
+        } else {
+          cell.classList.remove("locked");
+          cell.style.pointerEvents = "";
+          cell.style.opacity = "";
+        }
+      });
+
+      if (button) {
+        button.innerText = state.includes(true) ? `🔒 ${sectionId.slice(-1).toUpperCase()}` : `🔓 ${sectionId.slice(-1).toUpperCase()}`;
+      }
+    });
+  }
+
+function restoreLockStates(date) {
+    ["section-b", "section-m"].forEach(sectionId => {
+      const section = document.getElementById(sectionId);
+      const cells = section.querySelectorAll(".clickable");
+      const button = document.getElementById("toggle-lock-" + sectionId.slice(-1));
+      const state = JSON.parse(localStorage.getItem(`lockState_${sectionId}_${date}`) || "[]");
+
+      cells.forEach((cell, i) => {
+        if (state[i]) {
+          cell.classList.add("locked");
+          cell.style.pointerEvents = "none";
+          cell.style.opacity = "0.5";
+        } else {
+          cell.classList.remove("locked");
+          cell.style.pointerEvents = "";
+          cell.style.opacity = "";
+        }
+      });
+
+      if (button) {
+        button.innerText = state.includes(true) ? `🔒 ${sectionId.slice(-1).toUpperCase()}` : `🔓 ${sectionId.slice(-1).toUpperCase()}`;
+      }
+    });
+  }
+
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  async function sharePage() {
+    try {
+      const htmlContent = document.documentElement.outerHTML;
+      const blob = new Blob([htmlContent], { type: 'text/html' });
+
+      const now = new Date();
+      const day = ('0' + now.getDate()).slice(-2);
+      const month = ('0' + (now.getMonth() + 1)).slice(-2);
+      const year = now.getFullYear();
+      const filename = day + '-' + month + '-' + year + '.html';
+
+      const file = new File([blob], filename, { type: 'text/html' });
+
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({
+          title: 'Daily Plan',
+          text: 'Interactive plan for ' + filename,
+          files: [file]
+        });
+      } else {
+        alert("Sharing not supported on this device.");
+      }
+    } catch (e) {
+      alert("Share failed: " + e.message);
+    }
+  }
+</script>
+
+
+<script>
+  function saveStateForDate(date, sectionId) {
+    const section = document.getElementById(sectionId);
+    const cells = section.querySelectorAll(".clickable");
+    const clicked = Array.from(cells).map(cell => cell.classList.contains("clicked"));
+    localStorage.setItem(`planData_${sectionId}_${date}`, JSON.stringify(clicked));
+  }
+
+  function applyStateFromDate(date, sectionId) {
+    const section = document.getElementById(sectionId);
+    const cells = section.querySelectorAll(".clickable");
+    const data = JSON.parse(localStorage.getItem(`planData_${sectionId}_${date}`) || "[]");
+
+    cells.forEach((cell, i) => {
+      if (data[i]) {
+        cell.classList.add("clicked");
+        cell.style.backgroundColor = "#28a745";
+      } else {
+        cell.classList.remove("clicked");
+        cell.style.backgroundColor = "";
+      }
+    });
+  }
+
+  function carryForwardIfEmpty(currentDate) {
+    const allSections = ["section-b", "section-m"];
+    allSections.forEach(sectionId => {
+      if (!localStorage.getItem(`planData_${sectionId}_${currentDate}`)) {
+        let prevDate = new Date(currentDate);
+        for (let i = 1; i <= 365; i++) {
+          prevDate.setDate(prevDate.getDate() - 1);
+          const check = prevDate.toISOString().split("T")[0];
+          const data = localStorage.getItem(`planData_${sectionId}_${check}`);
+          if (data) {
+            localStorage.setItem(`planData_${sectionId}_${currentDate}`, data);
+            break;
+          }
+        }
+      }
+    });
+  }
+
+  document.getElementById("datePicker").addEventListener("change", () => {
+    const date = document.getElementById("datePicker").value;
+    carryForwardIfEmpty(date);
+    ["section-b", "section-m"].forEach(sectionId => applyStateFromDate(date, sectionId));
+  });
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const date = document.getElementById("datePicker").value;
+    carryForwardIfEmpty(date);
+    ["section-b", "section-m"].forEach(sectionId => applyStateFromDate(date, sectionId));
+  });
+</script>
+
+
+
+<script>
+function sharePage() {
+    const now = new Date();
+    const pad = n => n.toString().padStart(2, '0');
+    const dateStr = `${pad(now.getDate())}-${pad(now.getMonth() + 1)}-${now.getFullYear()}_${pad(now.getHours())}-${pad(now.getMinutes())}`;
+    const filename = `InteractivePlan_${dateStr}.html`;
+    const htmlContent = document.documentElement.outerHTML;
+    const blob = new Blob([htmlContent], { type: 'text/html' });
+    const file = new File([blob], filename, { type: 'text/html' });
+
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        navigator.share({
+            title: '20 Day Interactive Plan',
+            text: 'Sharing your interactive plan.',
+            files: [file],
+        }).catch((error) => console.error('Sharing failed:', error));
+    } else {
+        alert('Sharing is not supported on this browser. Try using Chrome on Android.');
+    }
+}
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const datePicker = document.getElementById("datePicker");
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    const todayStr = `${yyyy}-${mm}-${dd}`;
+
+    datePicker.max = todayStr;
+    datePicker.value = todayStr;
+  });
+</script>
+
+</body></html>
